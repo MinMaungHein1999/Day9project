@@ -6,7 +6,7 @@ public class PartTimeEmployee extends Employee {
 	private double hourlySalaryRate;
 	
 	public PartTimeEmployee(Employee employee, float totalWorkingHour, double hourlySalaryRate){
-		super(employee.getId(), employee.getName(), employee.getPosition(), employee.getDepartment());
+		super(employee.getId(), employee.getName(), employee.getPosition());
 		this.hourlySalaryRate = hourlySalaryRate;
 		this.totalWorkingHour = totalWorkingHour;
 	}

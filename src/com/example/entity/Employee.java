@@ -5,7 +5,7 @@ public class Employee {
 	private int id;
 	private String name;
 	private String position;
-	private String department;
+	private Department department;
 	
 	
 	public Employee(int id, String name) {
@@ -13,11 +13,10 @@ public class Employee {
 		this.name = name;
 	}
 	
-	public Employee(int id, String name, String position, String department) {
+	public Employee(int id, String name, String position) {
 		this.id = id;
 		this.name = name;
 		this.position = position;
-		this.department = department;	
 	}
 	
 	public double calculateSalary() {
@@ -37,10 +36,6 @@ public class Employee {
 		return position;
 	}
 
-	public String getDepartment() {
-		return department;
-	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -53,14 +48,20 @@ public class Employee {
 		this.position = position;
 	}
 
-	public void setDepartment(String department) {
+	
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
 		this.department = department;
 	}
 
 	@Override
 	public String toString() {
 		
-		return " Id : "+this.id+"\n Name : "+this.name+"\n Position : "+this.position+"\n Department : "+ this.department;
+		return " Id : "+this.id+"\n Name : "+this.name+"\n Position : "+this.position+"\n\n";
 	}
 	
 }

@@ -6,7 +6,7 @@ public class FullTimeEmployee extends Employee{
 	private double monthlySalaryRate = 1400;
 	
 	public FullTimeEmployee(Employee employee, int leaveDays, double monthlySalary) {
-		super(employee.getId(), employee.getName(), employee.getPosition(), employee.getDepartment());
+		super(employee.getId(), employee.getName(), employee.getPosition());
 		
 		this.leaveDays = leaveDays;
 		this.monthlySalaryRate = monthlySalary;
