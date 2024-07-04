@@ -5,14 +5,14 @@ public class FullTimeEmployee extends Employee{
 	private int leaveDays = 0;
 	private double monthlySalaryRate = 1400;
 	
-	public FullTimeEmployee(Employee employee, int leaveDays, double monthlySalary) {
-		super(employee.getId(), employee.getName(), employee.getPosition());
+	public FullTimeEmployee(int id, String name, String position, int leaveDays, double monthlySalary) {
+		super(id, name, position);
 		
 		this.leaveDays = leaveDays;
 		this.monthlySalaryRate = monthlySalary;
+		this.setSalary(this.calculateSalary());
+		
 	}
-	
-	
 	
 	public int getLeaveDays() {
 		return leaveDays;
@@ -41,7 +41,10 @@ public class FullTimeEmployee extends Employee{
 	@Override
 	public String toString() {
 		
-		return super.toString()+"\n Leave Days : " + this.leaveDays + "\n Monthly Salary Rate : "+ this.monthlySalaryRate+" \n \n ";
+		return super.toString() +"\n Leave Days : " + this.leaveDays 
+								+ "\n Monthly Salary Rate : "
+								+ this.monthlySalaryRate+" \n"
+								+" Actual Salary : "+ this.getSalary() +"\n";
 	}
 	
 	

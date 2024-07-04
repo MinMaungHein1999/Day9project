@@ -19,26 +19,25 @@ public class MainApp {
 		System.out.print("Enter position : ");
 		String position = br.readLine();
 		
-		Employee employee = new Employee(id, name, position);
 		
 		System.out.print("Enter Employee Type Part<<P>> or Full<<F>> Time Employee : ");
 		String employee_type = br.readLine();
 		
-		
+		Employee employee = null;
 		
 		if(employee_type.equals("P")) {
 			
-			employee = getPartTimeEmployeeInfo(employee);
+			employee = getPartTimeEmployeeInfo(id, name, position);
 			
 		}else if(employee_type.equals("F")){
-			employee = getFullTimeEmployeeInfo(employee);
+			employee = getFullTimeEmployeeInfo(id, name, position);
 		}
 		
 		return employee;
 		
 	}
 	
-	public static Employee getFullTimeEmployeeInfo(Employee employee) throws IOException {
+	public static Employee getFullTimeEmployeeInfo(int id, String name, String position) throws IOException {
 		
 		
 		System.out.print("Enter leave Days for this month : ");
@@ -46,12 +45,12 @@ public class MainApp {
 		System.out.print("Enter Monthly Salary Rate for this month : ");
 		Double salary_rate = Double.parseDouble(br.readLine());
 		
-		Employee fulltime_employee =new FullTimeEmployee(employee,leave_days, salary_rate );
+		Employee fulltime_employee =new FullTimeEmployee(id, name, position,leave_days, salary_rate );
 		
 		return fulltime_employee;
 	}
 	
-	public static Employee getPartTimeEmployeeInfo(Employee employee) throws IOException {
+	public static Employee getPartTimeEmployeeInfo(int id, String name, String position) throws IOException {
 		
 		
 		System.out.print("Enter Total Working Hour for this month : ");
@@ -60,7 +59,7 @@ public class MainApp {
 		System.out.print("Enter Hourly Salary Rate for this month : ");
 		float salary_rate = Float.parseFloat(br.readLine());
 		
-		Employee partTimeEmployee = new PartTimeEmployee(employee, working_hour, salary_rate);
+		Employee partTimeEmployee = new PartTimeEmployee(id, name, position, working_hour, salary_rate);
 		
 		return partTimeEmployee;
 		

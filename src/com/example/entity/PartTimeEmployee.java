@@ -5,10 +5,20 @@ public class PartTimeEmployee extends Employee {
 	private float totalWorkingHour;
 	private double hourlySalaryRate;
 	
-	public PartTimeEmployee(Employee employee, float totalWorkingHour, double hourlySalaryRate){
-		super(employee.getId(), employee.getName(), employee.getPosition());
+	public PartTimeEmployee(int id, String name, String position, float totalWorkingHour, double hourlySalaryRate){
+		super(id, name, position);
+		
 		this.hourlySalaryRate = hourlySalaryRate;
 		this.totalWorkingHour = totalWorkingHour;
+		this.setSalary(this.calculateSalary());
+	}
+	
+	public PartTimeEmployee(Employee employee, float totalWorkingHour, double hourlySalaryRate){
+		super(employee.getId(), employee.getName(), employee.getPosition());
+		
+		this.hourlySalaryRate = hourlySalaryRate;
+		this.totalWorkingHour = totalWorkingHour;
+		
 	}
 	
 	public float getTotalWorkingHour() {
@@ -37,7 +47,9 @@ public class PartTimeEmployee extends Employee {
 	@Override
 	public String toString() {
 		
-		return super.toString()+"\n Total Working Hour : " + this.totalWorkingHour + "\n Hourly Salary Rate : "+ this.hourlySalaryRate +" \n \n ";
+		return super.toString()+"\n Total Working Hour : " + this.totalWorkingHour 
+							   +"\n Hourly Salary Rate : "+ this.hourlySalaryRate
+							   +"\n Actual Salary Rate : "+ this.getSalary();
 	}
 	
 	

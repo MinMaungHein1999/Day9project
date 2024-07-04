@@ -20,7 +20,7 @@ public class Department {
 		this.employees = new Employee[max_employees];
 		this.max_employees = max_employees;
 	}
-	
+
 	public void hireEmployee(Employee employee) {
 		if (this.employee_count <= this.max_employees) {
 			if (this.findEmployeeById(employee.getId())!=null) {
@@ -31,20 +31,17 @@ public class Department {
 				System.out.println("Hire Success!!!");
 			}
 		}
-		
 	}
 	
 	public Employee findEmployeeById(int employee_id) {
 		if (employee_count == 0) {
 			return null;
 		}
-		
 		for(int index = 0; index < employee_count; index++ ) {
 			if(employees[index].getId() == employee_id){
 				return employees[index];
 			}
 		}
-		
 		return null;
 	}
 	
@@ -52,13 +49,9 @@ public class Department {
 	public void displayEmployees() {
 		displayDepartment();
 		for(int index = 0; index < this.employee_count; index++ ) {
-			System.out.println(employees[index].toString());
+			System.out.println(employees[index]);
 		}
 	}
-	
-	
-	
-
 	
 	public int getId() {
 		return id;
